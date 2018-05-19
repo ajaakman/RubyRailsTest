@@ -13,11 +13,15 @@ class SubjectsController < ApplicationController
   end
 
   def create
+    # Instantiate a new object using form parameters
     @subject = Subject.new(subject_params)
+    # Save the object
     if @subject.save
+      # If save succeeds, redirect to the index action
       flash[:notice] = "Subject created successfully."
       redirect_to(subjects_path)
     else
+      # If save fails, redisplay the form so user can fix problems
       render('new')
     end
   end
@@ -27,11 +31,15 @@ class SubjectsController < ApplicationController
   end
 
   def update
+    # Find a new object using form parameters
     @subject = Subject.find(params[:id])
+    # Update the object
     if @subject.update_attributes(subject_params)
+      # If save succeeds, redirect to the show action
       flash[:notice] = "Subject updated successfully."
       redirect_to(subject_path(@subject))
     else
+      # If save fails, redisplay the form so user can fix problems
       render('edit')
     end
   end
