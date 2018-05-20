@@ -5,11 +5,11 @@ class AccessController < ApplicationController
   before_action :confirm_logged_in, :except => [:login, :attempt_login, :logout]
 
   def menu
-
+    # display text & links
   end
 
   def login
-
+    # login form
   end
 
   def attempt_login
@@ -25,7 +25,7 @@ class AccessController < ApplicationController
       flash[:notice] = "You are now logged in."
       redirect_to(admin_path)
     else
-      flash.now[:notice] = "Invalid username/password combination"
+      flash.now[:notice] = "Invalid username/password combination."
       render('login')
     end
 

@@ -22,7 +22,6 @@ class DemoController < ApplicationController
   end
 
   def escape_output
-
   end
 
 end

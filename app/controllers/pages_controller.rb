@@ -65,7 +65,7 @@ class PagesController < ApplicationController
 
   def set_page_count
     @page_count = Page.count
-    if params[:action] == 'new' ||  params[:action] == 'create'
+    if params[:action] == 'new' || params[:action] == 'create'
       @page_count += 1
     end
   end
