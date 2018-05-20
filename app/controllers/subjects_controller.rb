@@ -25,7 +25,7 @@ class SubjectsController < ApplicationController
       redirect_to(subjects_path)
     else
       # If save fails, redisplay the form so user can fix problems
-      @subject_count = Subject.count + 1 
+      @subject_count = Subject.count + 1
       render('new')
     end
   end
@@ -64,7 +64,7 @@ class SubjectsController < ApplicationController
   private
 
   def subject_params
-    params.require(:subject).permit(:name, :position, :visible)
+    params.require(:subject).permit(:name, :position, :visible, :created_at)
   end
 
 end
